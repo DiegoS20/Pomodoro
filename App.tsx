@@ -25,7 +25,7 @@ export default function App() {
     if (isActive) {
       timerInterval.current = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
-      }, 1);
+      }, 1000);
     } else clearInterval(timerInterval.current);
 
     return () => clearInterval(timerInterval.current);
