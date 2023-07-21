@@ -9,11 +9,6 @@ export default function Header({
   setTime,
 }: HeaderProps) {
   const handlePress = (option: OptionsType) => {
-    const TIMES = {
-      Pomodoro: 25,
-      "Short Break": 5,
-      "Long Break": 15,
-    } as const;
     const newTime = TIMES[option];
     setCurrentTime(option);
     setTime(newTime * 60);
@@ -38,6 +33,12 @@ export default function Header({
 }
 
 export const OPTIONS = ["Pomodoro", "Short Break", "Long Break"] as const;
+
+export const TIMES = {
+  Pomodoro: 25,
+  "Short Break": 5,
+  "Long Break": 15,
+} as const;
 
 type OptionsType = (typeof OPTIONS)[number];
 type HeaderProps = {
